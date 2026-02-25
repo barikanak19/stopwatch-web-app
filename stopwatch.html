@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch Web Application - SkillCraft Technology</title>
+<link rel="stylesheet" href="stopwatch.css">
+<link rel="icon" type="image/png" href="sclogo.png">
+    <script defer src="stopwatch.js"></script>
+</head>
+<body>
+    <div class="decoration decoration-1"></div>
+    <div class="decoration decoration-2"></div>
+    <div class="decoration decoration-3"></div>
+
+    <div class="container">
+        <!-- Info Section -->
+        <div class="info-section">
+            <h1>Stopwatch <span style="color: #fff;">Web App</span></h1>
+            <p>Create an interactive and user-friendly stopwatch web application.</p>
+            
+            <ul class="features-list">
+                <li>Start/Stop Timer</li>
+                <li>Pause Functionality</li>
+                <li>Reset Timer</li>
+                <li>Lap Time Tracking</li>
+                <li>Accurate Time Measurement</li>
+                <li>Best & Worst Lap Highlighting</li>
+                <li>Real-time Statistics</li>
+            </ul>
+
+            <div style="margin-top: 2rem; padding: 1rem; background: rgba(0, 242, 255, 0.1); border-radius: 10px; border-left: 3px solid #00f2ff;">
+                <p style="font-size: 1rem; margin-bottom: 0.5rem;">
+                    <strong style="color: #00f2ff;">Keyboard Shortcuts:</strong>
+                </p>
+                <p style="font-size: 0.9rem; line-height: 1.6;">
+                    <strong>Space</strong> - Start/Pause<br>
+                    <strong>R</strong> - Reset<br>
+                    <strong>L</strong> - Record Lap
+                </p>
+            </div>
+        </div>
+
+        <!-- Stopwatch Section -->
+        <div class="stopwatch-container">
+            <div class="stopwatch-icon" id="stopwatchIcon">
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="55" r="35" stroke="#00f2ff" stroke-width="3" fill="rgba(0, 242, 255, 0.1)"/>
+                    <circle cx="50" cy="55" r="30" stroke="#00f2ff" stroke-width="1" opacity="0.3"/>
+                    <line x1="50" y1="55" x2="50" y2="30" stroke="#00f2ff" stroke-width="3" stroke-linecap="round" id="handMinute"/>
+                    <line x1="50" y1="55" x2="65" y2="55" stroke="#66d9ef" stroke-width="2" stroke-linecap="round" id="handSecond"/>
+                    <circle cx="50" cy="55" r="3" fill="#00f2ff"/>
+                    <rect x="40" y="10" width="20" height="8" rx="2" fill="#00f2ff"/>
+                    <circle cx="50" cy="14" r="4" fill="#16213e"/>
+                </svg>
+            </div>
+
+            <div class="time-display">
+                <div class="time">
+                    <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span><span class="milliseconds">.<span id="milliseconds">00</span></span>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="control-btn start-btn" id="startBtn">Start</button>
+                <button class="control-btn lap-btn" id="lapBtn" disabled>Lap</button>
+                <button class="control-btn reset-btn" id="resetBtn">Reset</button>
+            </div>
+
+            <div class="stats-container" id="statsContainer" style="display: none;">
+                <div class="stat-card">
+                    <div class="stat-label">Total Laps</div>
+                    <div class="stat-value" id="totalLaps">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Average Lap</div>
+                    <div class="stat-value" id="avgLap">00:00.00</div>
+                </div>
+            </div>
+
+            <div class="lap-section">
+                <div class="lap-title">Lap Times</div>
+                <ul class="lap-list" id="lapList">
+                    <div class="no-laps">No laps recorded yet</div>
+                </ul>
+            </div>
+
+            <div class="keyboard-info">
+                <strong>Tip:</strong> Use <strong>Space</strong> to start/pause, <strong>L</strong> for lap, <strong>R</strong> to reset
+            </div>
+        </div>
+    </div>
+</body>
+</html>
